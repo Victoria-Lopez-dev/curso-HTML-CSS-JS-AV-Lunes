@@ -28,3 +28,8 @@ console.log(lista.some((val)=>{ return val.length >5}))
 console.log(numeros.every((num)=> num%2 ==0))
 
 //Git - Github
+
+
+//proxima clase:
+// como descargarnos repositorios remotos 
+//animacion 3D
