@@ -1,0 +1,118 @@
+/* todos los estilos del sitio...*/
+
+/*
+selector{
+    propiedad:valor
+    propiedad:valor
+    propiedad:valor
+}
+
+selector -> manera de hacer referencia a una o varias etiquetas del HTML
+
+etiqueta - class - id -compuestos - universal(*)
+
+jerarquia -> entre varios selectores con misma propiedad definida que aplican a un mismo elemento HTML, va a quedar el que este definido en el selector mas especifico 
+
+id>class>etiqueta
+*/
+
+
+/* etiqueta*/
+
+h1{
+    color: #f90;
+}
+
+li{
+    background-color: burlywood;
+}
+p{
+    background-color: lightcoral;
+}
+
+/* class -> .+nombreDeLaClase*/
+
+.textoGeneral{
+    font-size: 1.3em;
+    color: blue;
+}
+
+/* id -> #+nombreDelId*/
+#texto1{
+    text-decoration: line-through;
+    color: darkmagenta;
+}
+/*compuestos  + ~ (etiquetas al lado de otra) |>(una etiqueta que se encuentra dentro de otra) ,
+[att=valor]
+*/
+
+button+a{
+    text-decoration: none;
+    background-color: yellow;
+}
+div>.tituloB{
+    color:crimson
+}
+
+a[href='hola']{
+    background-color: aqua;
+}
+input[type="text"]{
+    border-color: red;
+}
+
+input[type="email"]{
+    border-color: blue;
+}
+/*-----------------------------*/
+/* html{
+    font-size: 10px;
+} */
+
+.tarjeta{
+    width: 600px;
+    background-color: darkgreen;
+    height: 40vh;
+    
+}
+ul{
+    width: 50%;/* toma 100% el elemento padre*/
+    background-color: aqua;
+    border: 5px solid black;
+    font-size: .7em;/* toma el valor de la font-size del padre y lo multiplica por 2 */
+}
+button{
+    font-size: 2rem;/*10px(html) lo multiplica por 2*/
+}
+h1{
+    background-color: lightskyblue;
+    padding: 20px;
+    width: 80vw;/* toma 100% el ancho de la ventana de mi vista */
+}
+a{
+    font-size: 30px;
+}
+/*
+algunas propiedades:
+color -> color tipografico
+background-colo -> fondo de color
+border-color -> color del contorno de etiqueta
+
+width- height -> ancho y alto de un elemento 
+
+modelo de caja : 
+padding->relleno del elemento
+margin ->margen
+border-> contorno de la etiqueta
+
+*/
+/*
+unidades de medida : 
+relativas :[ % vh(view height) vw(view width)] [em rem -> mucho en tipografias]
+absolutas: px deg(grados) 
+
+
+em -> toma como referencia la font-size del elemento padre, en caso qeu no este definido en CSS : es 16px
+
+rem -> toma como referencia el valor de la fuenta del elemento raiz (html), si no esta definido en el CSS por defecto vale 16px
+*/

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Clase -2</title>
+</head>
+<body>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        video {
+            width: 500px;
+            display: block;
+        
+        }
+        .video2{
+            margin: 30px 0;
+            border: 2px solid pink;
+            padding: 20px;
+            background-color: violet;
+        }
+        .botonera{
+            padding: 10px;
+            display: flex;
+            gap: 40px;
+        }
+        .contenedor-barra{
+            display: flex;
+            justify-content: space-between;
+            padding: 30px;
+            background-color: darkorchid;
+        }
+        .contenedor-barra>p{
+            color: white;
+        }
+    </style>
+    <h1>Audio y Video </h1>
+    <!-- <audio src="./assets/aves.mp3"></audio> -->
+    <video  poster="./assets/bosque.jpg" controls loop >
+        <source src="./assets/videos/video2.mp4" type="video/mp4"/>
+        <source src="./assets/videos/video2.ogv" type="video/ogv"/>
+    </video>
+
+    <h2>Barra de reproduccion personalizada</h2>
+    <div class="video2">
+        <video id="video2" poster="./assets/bosque.jpg">
+            <source src="./assets/videos/video2.mp4" type="video/mp4"/>
+            <source src="./assets/videos/video2.ogv" type="video/ogv"/>
+        </video>  
+        
+        <div class="contenedor-barra">
+            <div class="botonera">
+                <button id="play">PLAY</button>
+                <button id="pause">PAUSE</button>   
+                <button onclick="sonido()">SONIDO <span id="sonido">ON</span></button>         
+            </div>  
+            <p>duracion del video: 
+                <span class="duracion"></span>
+            </p>  
+            <p>tiempo actual:
+                <span id="actual">00:00</span>
+            </p>        
+        </div>
+
+
+    </div>
+
+
+    <script src="./video-audio.js"></script>
+</body>
+</html>
+<!--
+audio y video -> src 
+atributos:
+    controls -> barra de reproduccion predeterminada por cada browser
+    poster -> imagen de fondo antes de su reproduccion
+    loop -> bucle infinito de reproduccion
+    autoplay -> reproduccion automatica 
+    si usamos el autoplay :evitar el controls para que no lo bloquee el browser - evitar el poster ya que no lo va a reproducir
+
+    
+-->

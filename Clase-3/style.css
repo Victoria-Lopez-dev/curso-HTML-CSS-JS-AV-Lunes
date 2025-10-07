@@ -1,0 +1,121 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    max-width: 1700px;
+    background-color: aqua;
+    margin: auto;
+}
+h1{
+    width: 100%;
+    background-color: pink;
+    padding: 20px;
+    position: sticky;
+    top: 0;
+}
+.tarjeta{
+    justify-self: center;
+    align-self: center;
+   width: 200px;
+   background-color:coral;
+   /*align-self | justify-self*/
+}
+.padre{
+    background-color: darkcyan;
+    height: 80vh;
+    display: flex;
+    justify-content:center;
+    align-items:center ;
+    gap: 30px;
+    /* flex-wrap: wrap; */
+    flex-flow: row wrap;
+    /* flex-direction: column; 
+    flex-flow : direction wrap*/
+    /* 
+    gap 
+    justify-content(row - horizontal || column - vertical) 
+    flex-end/start | center | space-... (between-around-evenly)
+    | align-items(row - vertical || column - horizontal) depende de la direccion 
+    flex-grow / shrink 
+    */
+}
+.flex{
+    background-color: cornflowerblue;
+    display: flex;
+}
+#cubo1{
+    flex-grow: 1;
+    background-color: yellow;
+}
+#cubo2{
+    flex-grow: 2;
+}
+.cubos{
+    width: 200px;
+    background-color: darkmagenta;
+    height: 100px;
+    border: 2px solid black;
+   
+}
+.padre2{
+    background-color: darkgoldenrod;
+    margin-top: 40px;
+    display: grid;
+     grid-template-columns: repeat(3,1fr) 2fr ; 
+    row-gap: 30px;
+    /* grid-template-areas: "uno1 dos2 tres3 cuatro4"
+                         "cinco5 cinco5 . cuatro4"
+    ; */
+   /*
+    grid-template-row
+    grid-template-column
+    grid-template-areas
+   */
+}
+.uno{
+    grid-area:"uno1"
+}
+.dos{
+    grid-area:"dos2"
+}
+.tres{
+    grid-area:"tres3"
+}
+.cuatro{
+    grid-area:"cuatro4"
+}
+.cinco{
+    grid-area:"cinco5" ;
+}
+/* .anteUltima{
+    grid-column: 4/5;
+    grid-row: 1/3;
+} */
+
+
+button{
+    padding: 5px;
+    width: 50px;
+
+}
+#t1{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+}
+
+
+img{
+    width: 100%;
+}
+/*
+    display -> block - inline - grid - flexbox 
+
+    position -> relative - absolute - fixed - sticky - static
+
+*/
