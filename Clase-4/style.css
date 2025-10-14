@@ -11,9 +11,50 @@ section{
     display: flex;
     flex-direction: column;
     align-items: center;
-
+   perspective:800px;/* defino la distancia del plano en el eje z*/
 }
 
+.translate:hover{
+    background-color: cadetblue;
+    transform:translateX(200px) translateZ(200px);
+    /* transition: transform 1s,background-color 3s; */
+    transition-duration:3s ;
+    transition-property:transform ;
+    transition-timing-function:cubic-bezier(0,1.01,1,.12);
+    /*ease |ease-in|ease-out|ease-in-out|lineal
+    https://cubic-bezier.com/#.16,.79,.6,.97
+
+    */
+}
+.rotate{
+    transition: transform 3s;
+}
+.rotar{
+    transform: rotateX(185deg) rotateY(10deg)  ;
+}
+.scale{
+    transform: scale(1.9);
+}
+.skew{
+    background-color: green;
+    transform: skewX(40deg);
+}
+.animacion-skew{
+    animation: trasformaciones 5s 2;
+
+}
+.combo{
+    background-color: crimson;
+    animation-name: mover;
+    animation-duration: 4s;
+    animation-iteration-count: 4;/* cuantas veces ejecuta la animacion : numero o infinite*/
+    animation-timing-function:cubic-bezier(0,1.01,1,.12) ;/*la velocidad con la que progresa la animacion*/
+    animation-direction: alternate;/* direccion o sentido en que se ejecuta la animacion*/;
+    animation-delay:11s ;/*genera una demora antes de arrancar con la animacion por primera vez*/
+    animation-fill-mode:backwards;
+    /* animation: mover 4s cubic-bezier(0,1.01,1,.12) 5s 4 fill-mode; */
+
+}
 /*-----------------------------------------------------------------*/
 
 .cubo{
@@ -26,4 +67,94 @@ section{
     display: flex;
     justify-content: center;
     align-items: center;
+    perspective: 400px;
+    perspective-origin: bottom;/* de donde vemos al elemento (top-center-bottom) */
+}
+.padre{
+    width: 200px;
+    height: 200px;
+    background-color: violet;
+    border: 2px solid darkviolet;
+    transform: rotateY(45deg);
+    transform-style: preserve-3d;
+}
+h1{
+    padding: 20px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    background-color: lightpink;
+}
+.scrollSelector{
+    background-color: darkorchid;
+    color: white;
+}
+#contenido{
+    width: 100%;
+    height: 100%;
+    background-color: darkorange;
+    /* background:linear-gradient(#26474d 50%, pink 100%);
+    animation: colores 4s; */
+    transform: rotateY(90deg);
+    
+} 
+/*
+transform
+
+translate(x,y)| translateX()|translateY()|translateZ() |translate3D(x,y,z)-> mover el elemento
+rotate()-> rotar el elemento -> deg(degree = grados) 
+ scale()-> escalar al elemento(agrandar o achicar)
+ skew() -> deformar al elemento
+
+ perspective -> lo aplico en el elemento padre 
+
+unidades de tiempo -> s(segundos) ms(milisegundos)
+
+ transition
+
+ animation ->
+
+ animation: name duration timing-function delay iteration-count direction fill-mode; 
+
+  cuadros / secuencia 
+  @keyframes -> 0% -100%
+  -> from{} to{}
+*/
+
+@keyframes trasformaciones{
+    10%{
+        color: #264d32;
+        transform:rotateY(100deg) ;
+    }
+    70%{
+        background-color: aqua;
+    }
+    100%{
+        transform: translateX(200px);
+        background-color: pink;
+    }
+}
+@keyframes colores {
+    0%{
+        background:linear-gradient(#26474d, pink 10%);
+    }
+    20%{
+        background: linear-gradient(#26474d,pink 20%);
+    }
+    50%{
+         background: linear-gradient(#26474d,pink 50%);
+    }
+    100%{
+        background: linear-gradient(#26474d,pink 100%);
+    }
+}
+@keyframes mover {
+    from{
+        background-color: blueviolet;
+        transform: translateX(200px) rotate(100deg);
+    }
+    to{
+        transform:translateZ(400px);
+    }
 }
