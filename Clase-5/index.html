@@ -3,10 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
     <title>Clase 5</title>
 </head>
 <body>
     <h1>SVG y canvas</h1>
+    <!-- <img src="./assets/women-heart.svg" alt=""> -->
+    <svg><!-- 600x500-->
+        <rect x="250" y="50" width="180" height="100" stroke="blue" fill="#FF6611" stroke-width="5" rx="3"></rect>
+        <rect id="rosa" x="350" y="100" width="180" height="100"  fill="pink" ></rect>
+
+        <circle cx="100" cy="200" r="80" stroke="green" stroke-width="5" fill="none"></circle>
+        <ellipse cx="490" cy="300" rx="100" ry="40" fill="rgb(100,33,55)"></ellipse>
+
+        <line x1="300" y1="400" x2="500" y2="499" stroke="blue" stroke-width="6" ></line>
+
+        <polyline points="0 0, 122 80,150 50,200 300,222 100,0" stroke="brown" stroke-width="3" fill="lightblue"></polyline>
+
+        <polygon  points="220 250,300 300,300 400,150 400,150 300" stroke="black" fill="none" stroke-width="4"></polygon>
+
+    </svg>
+
+        <!-- corazon-->
+    <svg>
+        <circle class="corazon" cx="260" cy="150"  r="40" fill="pink"></circle>
+        <circle class="corazon" cx="325" cy="150"  r="40" fill="pink"></circle>
+        <polygon points="226 170, 290 270,360 170" fill="pink"></polygon>
+    </svg>
+    <canvas></canvas>
     <script src="./script.js"></script>
 </body>
 </html>
+
+<!--
+SVG
+-figuras primitivas: 
+ * rectangulos -> rect  atributos 
+*circulos
+*elipses
+*linea
+*polilineas
+*poligonos
+
+
+atributos :
+
+x - y |cx -cy-> coordenadas 
+stroke -> color contorno
+fill -> color relleno
+stroke-width -> ancho de contorno
+rx -> redondeo de bordes(rect)
+r | rx-ry-> radio
+
+x1-y1| x2-y2 -> pares de coordenadas iniciales y finales
+
+points -> conjunto de coordenadas de los puntos a unir,de a pares xy y se separa con una coma simple 
+
+<animate>| <animateMotion>|<animateTransform>
+-->

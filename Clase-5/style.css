@@ -1,0 +1,38 @@
+svg{
+    border: 2px solid black;
+    width: 600px;
+    height: 500px;
+    background-color: lightgreen;
+}
+#rosa{
+    animation: girar 3s 4 alternate;
+}
+.corazon{
+    animation: latir 4s alternate infinite;
+}
+canvas{
+    border: 3px solid tomato;
+    height: 400px;
+    background-color: lightskyblue;
+}
+@keyframes girar {
+    from{
+        transform: rotate(0deg);
+        rx:5;
+    }
+    to{
+        transform: rotate(70deg);
+        rx:50;
+        fill:#f90;
+    }
+}
+@keyframes latir {
+    from{
+       r:40
+        
+    }
+    to{
+       r:45
+
+    }
+}
