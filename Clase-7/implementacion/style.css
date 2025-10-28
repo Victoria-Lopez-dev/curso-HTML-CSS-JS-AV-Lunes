@@ -137,10 +137,11 @@ img{
 /*--------------tema noche --------------- */
 
 .fondo{
-    background-color: #133983;
+    background-color: var(--primaryColor);
 }
 
+
 .botonNight{
-    background-color: #7EAAFF;
+    background-color: var(--secondaryColor);
     color: black;
 }

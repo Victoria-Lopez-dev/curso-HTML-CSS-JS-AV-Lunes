@@ -7,14 +7,14 @@
     <link rel="shortcut icon" href="./imagenes/logo.svg" type="image/svg+xml">
     <title>localStorage-sessionStorage</title>
 </head>
-<body>
+<body onload="actualizar()">
     
     <header>
         <img class="logo" src="./imagenes/logo.svg" alt="logo" >
 
         <a  class="link-hoja2" href="./hojaSecundaria.html">Ir a la siguiente hoja >>></a>
         <div>
-            <button class="tema-boton" >Tema</button>
+            <button class="tema-boton" onclick="desplegar()">Tema</button>
             <ul>
                 <li><button id="day" class="boton" onclick="temaDia()">Day</button></li>
                 <li><button id="night" class="boton" onclick="temaNoche()">Night</button></li>
@@ -35,7 +35,7 @@
                 <img src="./imagenes/silla.jpg" alt="silla">
                 <p>Una hermosa silla para su casa,donde poder relajarse</p>
                 <p>$<span>2500</span></p>
-                <button id="boton1" class="boton-compra">comprar</button>
+                <button id="boton1" class="boton-compra" onclick="sumarProducto(this)">comprar</button>
                 
             </div>
 
@@ -44,7 +44,7 @@
                 <img src="./imagenes/silla.jpg" alt="silla">
                 <p>Una hermosa silla para su casa,donde poder relajarse</p>
                 <p>$<span>3500</span></p>
-                <button id="boton2" class="boton-compra">comprar</button>
+                <button id="boton2" class="boton-compra" onclick="sumarProducto(this)">comprar</button>
             
             </div>   
             <div class="card">
@@ -52,12 +52,12 @@
                 <img src="./imagenes/silla.jpg" alt="silla">
                 <p>Una hermosa silla para su casa,donde poder relajarse</p>
                 <p>$<span>4500</span></p>
-                <button id="boton3" class="boton-compra">comprar</button>
+                <button id="boton3" class="boton-compra" onclick="sumarProducto(this)">comprar</button>
             
             </div>        
         </section>
 
-        <button id="boton-borrar" >Borrar compra</button>
+        <button id="boton-borrar" onclick="borrar()">Borrar compra</button>
         
     </main>
 
