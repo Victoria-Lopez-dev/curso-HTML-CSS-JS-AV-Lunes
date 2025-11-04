@@ -1,117 +1,94 @@
-    // //Asincronia -> poder ejecutar acciones en "segundo plano", sin cortar el flujo de ejecucion restante
+//POO Programacion Orientada a Objetos 
+//paradigma de programacion 
+//agrega a los actores intervinientes
+//les asigna capcidades 
+//encapsular codigo - herencia -no tengan acceso a toda la informacion y manejo de funciones todos los intervinientes 
 
-    // // JS -> naturalmente sincronico 
-    // //herramientas JS manejar la asincronia 
+// clases -> actuan como moldes donde definimos las capacidades y caracteristicas de estas entidades 
 
-    // //asincronismo 
-    // //1- callbacks -> a una funcion que pasa como parametro de otra 
-    // //ejemplo addEventListener()
-
-    // //2- promesas , 
-    // //3- async-await
-    // const variables="JUan";
-
-
-
-    // function funcionCallback(nombreCompleto,edad) {
-    //     console.log(`la persona ingresada es : ${nombreCompleto} de : ${edad} años`)
-    // }
-
-    // function Ejecucion1(edad,nombre,apellido,callback) {
-    //     let nombreTotal=nombre+" "+apellido;
-        
-    //     callback(nombreTotal,edad)
-    //     console.log("HOLLLAAA")
-    // }
-
-    // Ejecucion1(22,"Marta","Gomez",funcionCallback)
-
-    // let boton1=document.querySelector("#boton1");
-
-    // boton1.addEventListener("click",()=>{
-    //     console.log("Se pulso el boton!")
-    // });
-    // //...
-    // console.log("resto del codigo...");
+//Creando clases ------------- 
+/* 
+    sintaxis:  class NombreClase{
+        //caracteristicas 
 
 
-    // //promesas 
-    // //estructura
-    // ((resolve,reject)=>{
-    //     //ejecute ....
-    //     resolve("si se resolvio OK");
-    //     reject("no logro cumplir con la promesa")
-    // })
+        //capacidades -> funciones 
+         nombreFuncion(){
+            procedimiento..
+            }
 
-    // const mipromesa= new Promise((resolve,reject)=>{
-    //     //accion que lleva mucho tiempo ....
+    }
+*/
 
-    //     let resultado=false
-    //     if(resultado){
-    //         resolve("si se resolvio OK");
-    //     }else{
-    //         reject("no logro cumplir con la promesa")
-    //     }
-        
-    // })
-    // mipromesa
-    // .then((resultadoOk)=>{
-    //     console.log(resultadoOk);
-    // //....
-    // })
-    // .catch((error)=>console.log("no se pudo cumplir la promesa"+error));
+//ejemplo : sitio de la facultad : Docentes - Alumnos - Administrativo
 
-    // //metodo - un tipo de promesa:  fetch()-> ir a buscar y tambien mandar informacion a un recurso externo (generalmente una API)
+//creamos la clase -> molde del docente
 
-//fetch(URL,{configuracion})
-let mostrarPersonajes=(personajes)=>{
-    let ul=document.querySelector("ul")
-    for(let personaje of personajes){
-        let item=document.createElement("li");
-        item.innerHTML=`<p>${personaje.name}</p>
-            <img src='${personaje.image}'/>`
-        ul.appendChild(item)
+//super clase -> clase generica de la que extienden otras clases 
+class Usuario{
+    constructor(nombre,email,usuario){
+        this.nombre=nombre
+        this.email=email
+        this.usuario=usuario
+    };
+    logearse(usuario){
+        console.log(`Proceso de logeo de ${usuario}`)
+    } 
+}
+
+// subclase -> clases que herando de otra clase 
+class Docente extends Usuario{
+        constructor(nombreDocente,emailDocente,usuarioDocente,panelDocente){
+            super(nombreDocente,emailDocente,usuarioDocente)
+            this.panelCurso=panelDocente
+        };
+        cargarNotas(){
+            //llama a la lista de alumnos 
+            console.log("el docente carga notas...")
+        }
+        CrearContenido(){
+            console.log("crea contenido en el sitio..")
+        }
+    }
+
+class Alumno extends Usuario{
+        constructor(nombreAlumno,emailAlumno,usuarioAlumno){//ejecuta el constructor de la subclase 
+            super(nombreAlumno,emailAlumno,usuarioAlumno)//ejecuta el constructor de la super clase
+        };
+        mandarMensajeAlDocente(){
+            console.log("manda mensaje")
+        }
+        resolverExamen(){
+            console.log("El alumno resuelve el cuestionario...")
+        }
+    }
+class Curso{
+    constructor(nombre){
+        this.nombre=nombre
+    }
+    mostrarLinksClase(){
+
     }
 }
+// instancias de esas clases -> objetos, entidades en si 
+//sintaxis -> new Clase
 
-let listaPersonajes=[];
-const pedirPersonajes=async()=>{
-    listaPersonajes= await fetch("https://rickandmortyapi.com/api/character")
-    .then((res)=>{return res.json()})
-    .then((data)=>{return data.results})
-    .catch((error)=>{
-        console.log(`Error!`);
-        console.log(error)
-    });
+let docente1= new Docente("Marta Sanchez","marta@correofacultad.com","martaS","curso1");
+let docente2= new Docente("Juan Perez","juan@correofacultad.com","juanP","curso2");
 
-    console.log(listaPersonajes) 
-    mostrarPersonajes(listaPersonajes)
-     
-}
-let boton2=document.querySelector("#boton2");
+let alumno1=new Alumno();
 
-boton2.addEventListener("click",pedirPersonajes)
-// pedirPersonajes()
+docente1.logearse(docente1.usuario);
+docente2.logearse(docente2.usuario);
 
+docente1.cargarNotas();
+console.log(docente1.nombre);
+
+docente2.CrearContenido();
+alumno1.resolverExamen();
+
+console.log(docente1,docente2)
 
 
-//json
-//------------
-console.log("Resto de codigo por FUERA de la funcion pedirPersonaje")
-
-
-//async-await
-async function name(params) {
-    
-}
-//axios 
-/*protocolo HTTP
-//verbos HTTP:
-//  get-> de lectura (pidiendo informacion )
-//  post-> para crear
-// put-patch-> actualizar
-// delete -> borrar/eliminar
-
-//por defecto si no indico el verbo HTTP, estoy haciendo una peticion de tipo get 
-*/
+//Herencias -> crear una clase en base a otra 
 
